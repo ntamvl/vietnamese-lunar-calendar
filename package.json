@@ -1,0 +1,64 @@
+{
+  "name": "@chonoi/vietnamese-lunar-calendar",
+  "version": "1.0.0",
+  "description": "Thư viện Lịch Âm Việt Nam đầy đủ và chính xác nhất cho JavaScript, TypeScript và Node.js. Hỗ trợ chuyển đổi Âm - Dương, Can Chi, 24 Tiết Khí, Giờ Hoàng Đạo, Ngày lễ Việt Nam và Lục thập hoa giáp.",
+  "keywords": [
+    "amlich",
+    "am-lich",
+    "am-lich-viet-nam",
+    "lunar-calendar",
+    "vietnamese-lunar-calendar",
+    "lich-vietnam",
+    "can-chi",
+    "tiet-khi",
+    "gio-hoang-dao",
+    "ngay-le",
+    "vietnam"
+  ],
+  "author": "Chonoi & Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ntamvl/vietnamese-lunar-calendar"
+  },
+  "homepage": "https://github.com/ntamvl/vietnamese-lunar-calendar",
+  "type": "module",
+  "bin": {
+    "amlich": "./bin/amlich.js",
+    "vietnamese-lunar-calendar": "./bin/amlich.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "default": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "src",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test test/*.test.js",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.19.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

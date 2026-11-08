@@ -1,0 +1,7 @@
+test/
+scripts/
+.DS_Store
+*.log
+coverage/
+.github/
+.vscode/
