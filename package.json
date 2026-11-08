@@ -19,13 +19,13 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ntamvl/vietnamese-lunar-calendar"
+    "url": "git+https://github.com/ntamvl/vietnamese-lunar-calendar.git"
   },
   "homepage": "https://github.com/ntamvl/vietnamese-lunar-calendar",
   "type": "module",
   "bin": {
-    "amlich": "./bin/amlich.js",
-    "vietnamese-lunar-calendar": "./bin/amlich.js"
+    "amlich": "bin/amlich.js",
+    "vietnamese-lunar-calendar": "bin/amlich.js"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",

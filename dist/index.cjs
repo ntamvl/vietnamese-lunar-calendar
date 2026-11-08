@@ -355,7 +355,8 @@ function SunLongitude(jdn) {
   DL += (0.019993 - 101e-6 * T) * Math.sin(dr * 2 * M) + 29e-5 * Math.sin(dr * 3 * M);
   let L = (L0 + DL) * dr;
   L = L - PI * 2 * INT(L / (PI * 2));
-  if (L < 0) L += PI * 2;
+  if (L < 0)
+    L += PI * 2;
   return L;
 }
 function getSunLongitudeSector(dayNumber, timeZone) {
@@ -414,7 +415,8 @@ function getLeapMonthInYear(lunarYear, timeZone = DEFAULT_TIMEZONE) {
     if (leapMonth < 0) {
       leapMonth += 12;
     }
-    if (leapMonth === 0) leapMonth = 12;
+    if (leapMonth === 0)
+      leapMonth = 12;
     return leapMonth;
   }
   return 0;
@@ -503,7 +505,8 @@ function convertLunar2Solar(lunarDay, lunarMonth, lunarYear, isLeapMonth = false
 }
 function getDaysInLunarMonth(lunarMonth, lunarYear, isLeapMonth = false, timeZone = DEFAULT_TIMEZONE) {
   const currentStart = convertLunar2Solar(1, lunarMonth, lunarYear, isLeapMonth, timeZone);
-  if (!currentStart) return 0;
+  if (!currentStart)
+    return 0;
   const leapMonthInYear = getLeapMonthInYear(lunarYear, timeZone);
   let nextMonth = lunarMonth;
   let nextYear = lunarYear;
@@ -519,11 +522,13 @@ function getDaysInLunarMonth(lunarMonth, lunarYear, isLeapMonth = false, timeZon
     }
   }
   const nextStart = convertLunar2Solar(1, nextMonth, nextYear, nextIsLeap, timeZone);
-  if (!nextStart) return 0;
+  if (!nextStart)
+    return 0;
   return nextStart.jd - currentStart.jd;
 }
 function getLunarMonthName(lunarMonth, isLeapMonth = false) {
-  if (lunarMonth < 1 || lunarMonth > 12) return "";
+  if (lunarMonth < 1 || lunarMonth > 12)
+    return "";
   const baseName = `Th\xE1ng ${THANG_AM[lunarMonth - 1]}`;
   return isLeapMonth ? `${baseName} (nhu\u1EADn)` : baseName;
 }
@@ -762,13 +767,15 @@ var HOLIDAY_TYPE_LABEL = {
 var solarMap = /* @__PURE__ */ new Map();
 SOLAR_HOLIDAYS.forEach((h) => {
   const key = `${h.month}-${h.day}`;
-  if (!solarMap.has(key)) solarMap.set(key, []);
+  if (!solarMap.has(key))
+    solarMap.set(key, []);
   solarMap.get(key).push(h);
 });
 var lunarMap = /* @__PURE__ */ new Map();
 LUNAR_HOLIDAYS.forEach((h) => {
   const key = `${h.lunarMonth}-${h.lunarDay}`;
-  if (!lunarMap.has(key)) lunarMap.set(key, []);
+  if (!lunarMap.has(key))
+    lunarMap.set(key, []);
   lunarMap.get(key).push(h);
 });
 function getHolidaysBySolarDate(month, day) {
@@ -894,7 +901,8 @@ function getPublicHolidaysInYear(solarYear, timeZone = DEFAULT_TIMEZONE) {
     }
   }
   list.sort((a, b) => {
-    if (a.month !== b.month) return a.month - b.month;
+    if (a.month !== b.month)
+      return a.month - b.month;
     return a.day - b.day;
   });
   return list;
@@ -1013,7 +1021,8 @@ function padZero(n, width = 2) {
   return String(n).padStart(width, "0");
 }
 function formatLunarDate(lunar, pattern = "DD/MM/yyyy") {
-  if (!lunar) return "";
+  if (!lunar)
+    return "";
   const { day, month, year, isLeapMonth = false } = lunar;
   const yearCanChi = getYearCanChi(year);
   const monthName = getLunarMonthName(month, isLeapMonth);
