@@ -422,4 +422,4 @@ Sau khi publish, trang package sẽ hoạt động công khai tại:
 ## 📜 Giấy Phép (License)
 
 Dự án phát hành theo giấy phép [MIT License](LICENSE).  
-Thuật toán thiên văn bản quyền của tác giả Hồ Ngọc Đức (2006) và Jean Meeus (1998).
+Dựa trên thuật toán của Hồ Ngọc Đức (2006).
